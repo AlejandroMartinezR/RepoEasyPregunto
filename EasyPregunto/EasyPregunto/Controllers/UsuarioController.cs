@@ -16,7 +16,6 @@ namespace EasyPregunto.Controllers
         PreguntaAbiertaVO obj1 = new PreguntaAbiertaVO();
         TutorVO TutorBase = new TutorVO();
 
-        string ysymeboora;
 
         // GET: Usuario
         [AllowAnonymous]
@@ -194,6 +193,11 @@ namespace EasyPregunto.Controllers
 
             }
             return View(Disponible);
+        }
+
+        public ActionResult PaantallaDeEspera()
+        {
+            return View();
         }
 
     }

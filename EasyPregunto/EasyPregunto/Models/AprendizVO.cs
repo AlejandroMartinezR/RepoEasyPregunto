@@ -35,6 +35,13 @@ namespace EasyPregunto.Models
         [DataType(DataType.Password)]
         public string claveAprendizVO { get; set; }
 
+
+        [Required(ErrorMessage = "El campo es obligatorio")]
+        [Display(Name = "Clave")]
+        [StringLength(255, ErrorMessage = "Debe tener entre 5 y 255 caracteres", MinimumLength = 5)]
+        [DataType(DataType.Password)]
+        public string claveAprendizVO2 { get; set; }
+
         [Display(Name = "Elige un alias")]
         [StringLength(255, ErrorMessage = "Debe tener entre 5 y 255 caracteres", MinimumLength = 5)]
         public string aliasAprendizVO { get; set; }

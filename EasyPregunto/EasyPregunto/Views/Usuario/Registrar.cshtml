@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>AprendizVO</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -40,10 +39,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.claveAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.claveAprendizVO, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.claveAprendizVO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.claveAprendizVO, new { htmlAttributes = new { @class = "form-control" }, @id = "contasena1" })
                 @Html.ValidationMessageFor(model => model.claveAprendizVO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.claveAprendizVO2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.claveAprendizVO2, new { htmlAttributes = new { @class = "form-control", @id = "contasena1" } })
+                @Html.ValidationMessageFor(model => model.claveAprendizVO2, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -72,22 +79,9 @@
 <script type="text/javascript">
     function SubmitsEncry() {
 
-        var txtPassWord = document.getElementById("Password").value.trim();
-
-        if (txtPassWord != "") {
-
-            var key = CryptoJS.enc.Utf8.parse('8080808080808080');
-            var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
-
-            var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtPassWord), key,
-                {
-                    keySize: 128 / 8,
-                    iv: iv,
-                    mode: CryptoJS.mode.CBC,
-                    padding: CryptoJS.pad.Pkcs7
-                });
-
-            document.getElementById("Password").value = encryptedpassword;
+        if (document.getElementById("contrasena1").value != document.getElementById("contrasena2").value)
+        {
+            alert("La contraseña y su confirmacion deben coincidir");
         }
     }
 </script>

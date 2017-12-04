@@ -187,6 +187,7 @@
     <Content Include="Views\Usuario\TutoresDisponibles.cshtml" />
     <Content Include="Views\Tutor\PerfilTutor.cshtml" />
     <Content Include="Views\Usuario\PreguntaAbierta.cshtml" />
+    <Content Include="Views\Usuario\PaantallaDeEspera.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

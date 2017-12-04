@@ -17,13 +17,6 @@ namespace EasyPregunto.Controllers
         {
             return View();
         }
-
-        public ActionResult ClaseDePrueba()
-        {
-            return View();
-        }
-
         
-
     }
 }
