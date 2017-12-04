@@ -25,19 +25,29 @@ namespace EasyPregunto.Controllers
         }
 
         [HttpPost]
-        public ActionResult registroTutor(TutorVO obj)
+        [AllowAnonymous]
+        public async Task<ActionResult> registroTutor(TutorVO datos) //metodo asincrono
         {
             if (ModelState.IsValid)
             {
-                return View(obj);
+                if (datos.RegistrarseTutor() == false)
+                {
+                    ViewBag.Message = "El usuario o email ya se encuentre registrado";
+                    return View("Registrar", datos);
+                }
+                else
+
+                {
+                    return View("Login");
+                }
             }
             else
             {
-                return View();
+                ViewBag.Message = "No se registro el usuario correctamente";
+                return View("registrotutor");
             }
-
         }
 
-        
+
     }
 }

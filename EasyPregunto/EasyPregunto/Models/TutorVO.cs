@@ -58,7 +58,6 @@ namespace EasyPregunto.Models
 
         public int RolTutorVO { get; set; }
 
-        [Required(ErrorMessage = "Campo requerido")]
         public int AreaConocimientoTutorVO { get; set; }
 
         [Required(ErrorMessage ="Debe realizar una breve descripcion de perfil")]
@@ -83,7 +82,7 @@ namespace EasyPregunto.Models
             }
             else
             {
-                obj.Tipo_Documento = TipoDocumentoTutorVO;
+                obj.Tipo_Documento = (int)TipoDocumentoTutorVO;
                 obj.Numero_Documento = NumeroDocumentoTutorVO;
                 obj.Nombres_Tutor = NombresTutorVO;
                 obj.Apellidos_Tutor = ApellidosTutorVO;
@@ -92,7 +91,8 @@ namespace EasyPregunto.Models
                 obj.Telefono_Tutor = TelefonoTutorVO;
                 obj.Tiempo_Laborado = TiempoLaboradoTutorVO;
                 obj.Rol = 2;
-
+                obj.DescripcionPerfil = DescripcionPerfilVO;
+                obj.Area_Conocimiento = AreaConocimientoTutorVO;
 
                 modelo.Tutor.InsertOnSubmit(obj);
                 modelo.SubmitChanges();
