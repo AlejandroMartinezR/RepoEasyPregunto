@@ -2794,7 +2794,7 @@ namespace EasyPregunto.Models
 		
 		private int _Numero_Documento;
 		
-		private int _Experiencia;
+		private System.Nullable<int> _Experiencia;
 		
 		private string _Nombres_Tutor;
 		
@@ -2806,7 +2806,7 @@ namespace EasyPregunto.Models
 		
 		private string _Telefono_Tutor;
 		
-		private int _Nivel_Estudio;
+		private System.Nullable<int> _Nivel_Estudio;
 		
 		private string _Tiempo_Laborado;
 		
@@ -2840,7 +2840,7 @@ namespace EasyPregunto.Models
     partial void OnTipo_DocumentoChanged();
     partial void OnNumero_DocumentoChanging(int value);
     partial void OnNumero_DocumentoChanged();
-    partial void OnExperienciaChanging(int value);
+    partial void OnExperienciaChanging(System.Nullable<int> value);
     partial void OnExperienciaChanged();
     partial void OnNombres_TutorChanging(string value);
     partial void OnNombres_TutorChanged();
@@ -2852,7 +2852,7 @@ namespace EasyPregunto.Models
     partial void OnClave_TutorChanged();
     partial void OnTelefono_TutorChanging(string value);
     partial void OnTelefono_TutorChanged();
-    partial void OnNivel_EstudioChanging(int value);
+    partial void OnNivel_EstudioChanging(System.Nullable<int> value);
     partial void OnNivel_EstudioChanged();
     partial void OnTiempo_LaboradoChanging(string value);
     partial void OnTiempo_LaboradoChanged();
@@ -2941,8 +2941,8 @@ namespace EasyPregunto.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Experiencia", DbType="Int NOT NULL")]
-		public int Experiencia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Experiencia", DbType="Int")]
+		public System.Nullable<int> Experiencia
 		{
 			get
 			{
@@ -3065,8 +3065,8 @@ namespace EasyPregunto.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nivel_Estudio", DbType="Int NOT NULL")]
-		public int Nivel_Estudio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nivel_Estudio", DbType="Int")]
+		public System.Nullable<int> Nivel_Estudio
 		{
 			get
 			{
@@ -3305,7 +3305,7 @@ namespace EasyPregunto.Models
 					}
 					else
 					{
-						this._Experiencia = default(int);
+						this._Experiencia = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Experiencia1");
 				}

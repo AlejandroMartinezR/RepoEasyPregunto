@@ -143,13 +143,13 @@
       <Column Name="Id_Tutor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Tipo_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Numero_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Experiencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Experiencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Nombres_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Apellidos_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Correo_Electronico_tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Clave_Tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Telefono_Tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Nivel_Estudio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel_Estudio" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Tiempo_Laborado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

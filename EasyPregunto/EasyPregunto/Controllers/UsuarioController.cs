@@ -99,6 +99,7 @@ namespace EasyPregunto.Controllers
                     return View("Registrar", datos);
                 }
                 else
+
                 {
                     return View("Login");
                 }
