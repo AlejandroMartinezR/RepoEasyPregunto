@@ -1,0 +1,417 @@
+
+
+* {margin: 0; padding: 0;}
+
+a {text-decoration: none;}
+
+/* This class is added on scroll */
+.fixed {
+	position: fixed;
+	top: 0;
+	height: 100px;
+
+       background: #eaecef;
+           z-index:99;
+   
+}
+
+body {   
+	
+	font-family: 'open-sans-bold', AvenirNext-Medium, sans-serif;
+	font-size: 18px;
+	text-align: center;
+}
+
+
+nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 140px;
+    background: linear-gradient(to right, #00ccff 0%, #00cc99 100%);
+    z-index:99;
+
+
+ 
+	
+}
+
+header {
+
+    position: relative;
+	top: 0;
+	width: 100%;
+	height: 140px;
+    text-decoration:none;
+    z-index:99;
+}
+
+
+
+header li {
+	display: inline-block;
+	padding: 24px 10px;
+
+}
+
+header li a {
+	color: #757575;
+	text-transform: uppercase;
+}
+
+header li a:hover {
+	color: #FFF;
+	text-transform: uppercase;
+
+}
+
+
+
+
+nav li {
+	display: inline-block;
+	padding: 24px 10px;
+
+}
+
+nav li a {
+	color: #757575;
+	text-transform: uppercase;
+}
+
+nav li a:hover {
+	color: #FFF;
+	text-transform: uppercase;
+
+}
+/* en esta parte esta el diseño principal de cada una de las secciones */
+section {
+	height: 100vh;
+
+}
+
+
+#screen1 {
+    background: linear-gradient(to right, #00ccff 0%, #00cc99 100%);    
+    background-repeat: no-repeat;
+    background-position:top;
+    
+
+    position: absolute;
+    
+   
+}
+
+    #screen1 img {
+        z-index: 2;
+
+
+    }
+
+
+
+#screen1 p {
+	padding-top: 100px;
+        background: linear-gradient(to right, #00ccff 0%, #00cc99 100%);
+    padding-top:20px;
+}
+
+#screen2 {
+	background: #e0d7d7;
+
+}
+
+#screen3 {
+	background: #fff;
+        color:#0084ff;
+    text-align:center;
+
+}
+
+#screen3 .lu{
+    padding: 20px 100px;
+    float: initial    ;
+    width: 30%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#screen3 .lo{
+    padding: 15px;
+    float: initial    ;
+    width: 50%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 10px 10px;
+    position:relative;
+    box-sizing: border-box;
+}
+}
+
+
+
+#screen5 {
+    position: absolute;
+    background: orange;
+    z-index:70;
+
+}
+
+#screen5 .lu{
+    padding: 20px 100px;
+    color:#0084ff;
+    float: initial    ;
+    width: 30%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#screen5 img{
+
+    z-index:-1;
+    position:relative
+   
+
+}
+.le{
+
+    width: 50%;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 10px 10px;
+    z-index:2;
+    position:relative;
+    float:left;
+    
+    }
+
+.jo {
+    background-image: url('Imagenes/conexiones3.jpg');
+    background-repeat:no-repeat;
+    height:100%;
+    width:100%;
+}
+
+.le:nth-child(1){
+    height:100px;
+    width:100px;
+        float:right;
+        border-radius:50%;
+        text-align:center;
+        background: radial-gradient(circle at 100px 100px, #61e878, #fff);
+        opacity:0.5;
+
+}
+
+/*este codigo es para la posicion de las alertas en las fotos de los tutores*/
+
+.le .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Posicion del mensaje de alerta en hover */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.le:hover .tooltiptext {
+    visibility: visible;
+}
+
+#screen6 {
+    background-image: url('Imagenes/tablero2.jpg');
+    background-position:right;
+    background-color:white;
+    
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    
+}
+
+#screen6 .lu{
+    padding: 20px 100px;
+    color:white;
+    float: initial    ;
+    width: 30%;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#screen8{
+	background: white;
+    font-family: "Gotham_SSm_4r", Helvetica, Arial, sans-serif;
+
+
+    margin: 0;
+}
+
+div .trol{
+	background-color: #f9f9f9;
+    padding: 30px 50px;
+    margin: 0 auto;
+    line-height: 30px;
+    width: 620px;
+    font-size:20px;
+    text-align:justify;
+
+
+}
+
+
+
+@media only screen and (max-width: 520px) {
+
+	nav li {
+		padding: 24px 4px;
+	}
+
+	nav li a {
+		font-size: 14px;
+	}
+
+}
+
+.footer {
+
+  right: 0;
+  bottom: 0;
+     font-family: Yrsa;
+    background: #1b1b1c;
+  left: 0;
+  padding: 1rem;
+  color:white;
+  font-size:small;
+
+  text-align: center;
+}
+
+.abajo {
+margin: 0 auto;
+z-index: 1;
+}
+
+.fondo {
+
+    position: relative;
+    top: 0;  
+    left: 0;
+    z-index: 66; 
+        background: linear-gradient(to right, #00ccff 0%, #00cc99 100%);
+    
+
+}
+
+
+.fondo01 {
+
+    background-image: url('Imagenes/imagenfondo.jpg');
+        
+    position: relative;
+    height: 630px;
+    width: 1500px;
+    top: 0;
+    z-index: 65;
+}
+
+div .titulos{
+    color:#fff;
+    z-index:100;
+    width: 500px;
+    float:right;
+    position:relative;
+    padding: 15px 90px 15px 15px;
+    text-align:justify;
+     margin: 0 auto;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px 10px 10px 10px;
+    font-size:18px;
+
+
+
+}
+
+ul{ background: rgba(0,0,0,0.9);
+   color:white;
+
+}   
+
+
+/*este codigo desc param las tablas defs label pagna de inicio param que funcionen como tablas*/
+
+.divTable{
+    text-align:center;
+	display: table;
+	width: 100%;
+    height:200px;
+    border-radius: 20px;
+    position:relative;
+}
+.divTableRow {
+	display: table-row;
+    border-radius: 20px;
+}
+.divTableHeading {
+	backgr 
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 20px solid rgba(0, 0, 0, 0.08);;
+	display: table-cell;
+	padding: 3px 10px;
+    border-radius: 20px;
+    width: 50%;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+        border-radius: 20px;
+}
+
+/*este codigo es para los botones de greistro y demas que no estan en el header*/
+
+.button {
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}

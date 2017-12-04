@@ -1,0 +1,116 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Yrsa;
+}
+
+body {
+    overflow: hidden; /*el contenido se mueve con todo*/
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    font-family: Yrsa;
+    background: linear-gradient(to top left, #00cc99 0%, #66ff66 100%);
+    /*position: fixed;
+z-index: 100;*/
+    border-color: #f2f2f2;
+}
+header .lista_item a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu {
+    list-style-type: none;
+    padding-left: 35px;
+    padding-top: 9px;
+    font-size: 140%;
+    display: flex;
+    margin: 1px auto;
+}
+
+.lista_item {
+
+   
+    padding: 0px 30px 0px 30px;
+    list-style: none;
+    display: inline-flex;
+}
+
+.linea {
+    font-size: 100%;
+    position: relative;
+    padding-left: 640px;
+    padding-top: 10px;
+}
+
+header .lista_item a:hover {
+    color: #a89f9f;
+}
+
+
+.sidebar {
+    /*position: absolute; para Romper flujo*/
+    width: 250px; /*ancho*/
+    height: 1000px; /*Largo*/
+    background: #333; /*Color de fondo*/
+    color: #fff; /*Color de texto Blanco*/
+    outline: 0 solid #2a2a2a;
+}
+
+    .sidebar h2 {
+        text-align: center;
+        margin: 0;
+        padding: 10px; /*relleno*/
+        background: #2a2a2a;
+    }
+
+    .sidebar ul {
+        list-style: none; /*quitar estilos de lista*/
+        padding: 0; /*relleno*/
+        margin: 0;
+    }
+
+    .sidebar li {
+        outline: 1px solid #2a2a2a; /*genera una linea pero no genera un espacio*/
+        transition: all 0.3s;
+    }
+
+        .sidebar li:hover {
+            background: #444;
+            border-left: 5px solid #eee;
+        }
+
+    .sidebar a {
+        display: block; /*es un bloque*/
+        color: #fff;
+        text-decoration: none; /*quitar el sub rayado*/
+        padding: 10px;
+    }
+
+.contenido {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #eee;
+    padding: 5px;
+    transition: all 0.3s;
+    box-sizing: border-box; /*para que el padin no se salga*/
+    z-index: 10;
+}
+
+.menu-bar {
+    cursor: pointer;
+}
+
+.abrir {
+    transform: translateX(250px); /*menu se traslada enel eje X*/
+}
+
+.abajo {
+margin: 0 auto;
+z-index: 1;
+}

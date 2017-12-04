@@ -1,0 +1,29 @@
+﻿@model List<EasyPregunto.Models.SubAreaVO>
+
+@{
+    ViewBag.Title = "Biologia";
+    Layout = "~/Views/Shared/UsuarioSesion.cshtml";
+}
+
+<h2> Sub Areas Biologia</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Sub Areas</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.NombreSubVO</td>
+                <td><a href="@Url.Action("TutoresDisponibles","Usuario")">Elegir</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<h2>No encuentras la sub area que se acomode a tu pregunta, realiza una <a href="@Url.Action("PreguntaAbierta","Usuario")"> Pregunta abierta</a></h2>
+
+

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EasyPregunto" Class="DataEasyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=PERSONAL-PC;Initial Catalog=EasyPregunto;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EasyPreguntoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Aprendiz" Member="Aprendiz">
+    <Type Name="Aprendiz">
+      <Column Name="Id_aprendiz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_aprendiz" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos_aprendiz" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo_Electronico_aprendiz" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Clave_aprendiz" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Alias_aprendiz" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Aprendiz_Estado_Sesion" Member="Estado_Sesion" ThisKey="Id_aprendiz" OtherKey="Aprendiz" Type="Estado_Sesion" />
+      <Association Name="Rol_Aprendiz" Member="Rol1" ThisKey="Rol" OtherKey="Id_Rol" Type="Rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Area_Conocimiento" Member="Area_Conocimiento">
+    <Type Name="Area_Conocimiento">
+      <Column Name="Id_Area" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Area" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Area_Conocimiento_Estado_Sesion" Member="Estado_Sesion" ThisKey="Id_Area" OtherKey="IdArea" Type="Estado_Sesion" />
+      <Association Name="Area_Conocimiento_Pregunta_Abierta" Member="Pregunta_Abierta" ThisKey="Id_Area" OtherKey="Area" Type="Pregunta_Abierta" />
+      <Association Name="Area_Conocimiento_Sub_area" Member="Sub_area" ThisKey="Id_Area" OtherKey="Area" Type="Sub_area" />
+      <Association Name="Area_Conocimiento_Tutor" Member="Tutor" ThisKey="Id_Area" OtherKey="Area_Conocimiento" Type="Tutor" />
+      <Association Name="Area_Conocimiento_Tutor_Has_Area_Conocimiento" Member="Tutor_Has_Area_Conocimiento" ThisKey="Id_Area" OtherKey="Area_Conocimiento" Type="Tutor_Has_Area_Conocimiento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Calificacion" Member="Calificacion">
+    <Type Name="Calificacion">
+      <Column Name="Id_Calificacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion_Calificacion" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Calificacion_Sesion" Member="Sesion" ThisKey="Id_Calificacion" OtherKey="Calificacion" Type="Sesion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_Sesion" Member="Estado_Sesion">
+    <Type Name="Estado_Sesion">
+      <Column Name="Id_Estado_Sesion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Aprendiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tutor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdArea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_Sesion_Sesion" Member="Sesion" ThisKey="Id_Estado_Sesion" OtherKey="Estado_Sesion" Type="Sesion" />
+      <Association Name="Aprendiz_Estado_Sesion" Member="Aprendiz1" ThisKey="Aprendiz" OtherKey="Id_aprendiz" Type="Aprendiz" IsForeignKey="true" />
+      <Association Name="Area_Conocimiento_Estado_Sesion" Member="Area_Conocimiento" ThisKey="IdArea" OtherKey="Id_Area" Type="Area_Conocimiento" IsForeignKey="true" />
+      <Association Name="Tutor_Estado_Sesion" Member="Tutor1" ThisKey="Tutor" OtherKey="Id_Tutor" Type="Tutor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estados" Member="Estados">
+    <Type Name="Estados">
+      <Column Name="Id_sesion_tutor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Estado_tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Estados_Tutor" Member="Tutor" ThisKey="Id_sesion_tutor" OtherKey="Estado" Type="Tutor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Experiencia" Member="Experiencia">
+    <Type Name="Experiencia">
+      <Column Name="Id_Experiencia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpresaInstitucion_Experiencia" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo_Experiencia" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso_Experiencia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida_Experiencia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MotivoRetiro_Experiencia" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Experiencia_Tutor" Member="Tutor" ThisKey="Id_Experiencia" OtherKey="Experiencia" Type="Tutor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Formacion_Academica" Member="Formacion_Academica">
+    <Type Name="Formacion_Academica">
+      <Column Name="Id_Formacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nivel_Formacion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Formacion_Academica_Nivel_Estudio" Member="Nivel_Estudio" ThisKey="Id_Formacion" OtherKey="Formacion_Academica" Type="Nivel_Estudio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nivel_Estudio" Member="Nivel_Estudio">
+    <Type Name="Nivel_Estudio">
+      <Column Name="IdNivel_Estudio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Formacion_Academica" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Titulo_Obtenido" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Institucion_Estudio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AnioFinalizacion_Estudio" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Association Name="Nivel_Estudio_Nivel_estudio_Has_Tutor" Member="Nivel_estudio_Has_Tutor" ThisKey="IdNivel_Estudio" OtherKey="Nivel_Estudio" Type="Nivel_estudio_Has_Tutor" />
+      <Association Name="Formacion_Academica_Nivel_Estudio" Member="Formacion_Academica1" ThisKey="Formacion_Academica" OtherKey="Id_Formacion" Type="Formacion_Academica" IsForeignKey="true" />
+      <Association Name="Titulo_Obtenido_Nivel_Estudio" Member="Titulo_Obtenido1" ThisKey="Titulo_Obtenido" OtherKey="Id_Titulo" Type="Titulo_Obtenido" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nivel_estudio_Has_Tutor" Member="Nivel_estudio_Has_Tutor">
+    <Type Name="Nivel_estudio_Has_Tutor">
+      <Column Name="Nivel_Estudio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tutor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Nivel_Estudio_Nivel_estudio_Has_Tutor" Member="Nivel_Estudio1" ThisKey="Nivel_Estudio" OtherKey="IdNivel_Estudio" Type="Nivel_Estudio" IsForeignKey="true" />
+      <Association Name="Tutor_Nivel_estudio_Has_Tutor" Member="Tutor1" ThisKey="Tutor" OtherKey="Id_Tutor" Type="Tutor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pregunta_Abierta" Member="Pregunta_Abierta">
+    <Type Name="Pregunta_Abierta">
+      <Column Name="Id_Pregunta_Abierta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pregunta" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Area_Conocimiento_Pregunta_Abierta" Member="Area_Conocimiento" ThisKey="Area" OtherKey="Id_Area" Type="Area_Conocimiento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rol" Member="Rol">
+    <Type Name="Rol">
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rol" Member="Rol1" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Rol_Aprendiz" Member="Aprendiz" ThisKey="Id_Rol" OtherKey="Rol" Type="Aprendiz" />
+      <Association Name="Rol_Tutor" Member="Tutor" ThisKey="Id_Rol" OtherKey="Rol" Type="Tutor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sesion" Member="Sesion">
+    <Type Name="Sesion">
+      <Column Name="Id_Sesion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Calificacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado_Sesion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaHoraInicio_Sesion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaHoraFin_Sesion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Calificacion_Sesion" Member="Calificacion1" ThisKey="Calificacion" OtherKey="Id_Calificacion" Type="Calificacion" IsForeignKey="true" />
+      <Association Name="Estado_Sesion_Sesion" Member="Estado_Sesion1" ThisKey="Estado_Sesion" OtherKey="Id_Estado_Sesion" Type="Estado_Sesion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sub_area" Member="Sub_area">
+    <Type Name="Sub_area">
+      <Column Name="Id_Sub_Area" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Sub" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Area_Conocimiento_Sub_area" Member="Area_Conocimiento" ThisKey="Area" OtherKey="Id_Area" Type="Area_Conocimiento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Documento" Member="Tipo_Documento">
+    <Type Name="Tipo_Documento">
+      <Column Name="Id_Documento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Documento" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Documento_Tutor" Member="Tutor" ThisKey="Id_Documento" OtherKey="Tipo_Documento" Type="Tutor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Titulo_Obtenido" Member="Titulo_Obtenido">
+    <Type Name="Titulo_Obtenido">
+      <Column Name="Id_Titulo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Titulo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Titulo_Obtenido_Nivel_Estudio" Member="Nivel_Estudio" ThisKey="Id_Titulo" OtherKey="Titulo_Obtenido" Type="Nivel_Estudio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tutor" Member="Tutor">
+    <Type Name="Tutor">
+      <Column Name="Id_Tutor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Numero_Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Experiencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo_Electronico_tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Clave_Tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono_Tutor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel_Estudio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tiempo_Laborado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Area_Conocimiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionPerfil" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Association Name="Tutor_Estado_Sesion" Member="Estado_Sesion" ThisKey="Id_Tutor" OtherKey="Tutor" Type="Estado_Sesion" />
+      <Association Name="Tutor_Nivel_estudio_Has_Tutor" Member="Nivel_estudio_Has_Tutor" ThisKey="Id_Tutor" OtherKey="Tutor" Type="Nivel_estudio_Has_Tutor" />
+      <Association Name="Tutor_Tutor_Has_Area_Conocimiento" Member="Tutor_Has_Area_Conocimiento" ThisKey="Id_Tutor" OtherKey="Tutor" Type="Tutor_Has_Area_Conocimiento" />
+      <Association Name="Area_Conocimiento_Tutor" Member="Area_Conocimiento1" ThisKey="Area_Conocimiento" OtherKey="Id_Area" Type="Area_Conocimiento" IsForeignKey="true" />
+      <Association Name="Estados_Tutor" Member="Estados" ThisKey="Estado" OtherKey="Id_sesion_tutor" Type="Estados" IsForeignKey="true" />
+      <Association Name="Experiencia_Tutor" Member="Experiencia1" ThisKey="Experiencia" OtherKey="Id_Experiencia" Type="Experiencia" IsForeignKey="true" />
+      <Association Name="Rol_Tutor" Member="Rol1" ThisKey="Rol" OtherKey="Id_Rol" Type="Rol" IsForeignKey="true" />
+      <Association Name="Tipo_Documento_Tutor" Member="Tipo_Documento1" ThisKey="Tipo_Documento" OtherKey="Id_Documento" Type="Tipo_Documento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tutor_Has_Area_Conocimiento" Member="Tutor_Has_Area_Conocimiento">
+    <Type Name="Tutor_Has_Area_Conocimiento">
+      <Column Name="Tutor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Area_Conocimiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Area_Conocimiento_Tutor_Has_Area_Conocimiento" Member="Area_Conocimiento1" ThisKey="Area_Conocimiento" OtherKey="Id_Area" Type="Area_Conocimiento" IsForeignKey="true" />
+      <Association Name="Tutor_Tutor_Has_Area_Conocimiento" Member="Tutor1" ThisKey="Tutor" OtherKey="Id_Tutor" Type="Tutor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.tutodisponible3" Method="tutodisponible3">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Materia" Parameter="materia" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tutodisponible3Result">
+      <Column Name="Id_Tutor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos_Tutor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel_Estudio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionPerfil" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

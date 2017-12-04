@@ -1,0 +1,53 @@
+﻿@model EasyPregunto.Models.AprendizVO
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<section id="screen3">
+    <div class="form-horizontal">
+        <div class="lu">
+
+            <h2>Iniciar Sesión</h2>
+        </div>
+        
+        <div style="padding-bottom:80px;"></div>
+        
+        @using (Html.BeginForm("EligeMateria", "Usuario", FormMethod.Post, new { @class = "form-signin" })) // se crea el formulario
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.correoElectronicoAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.correoElectronicoAprendizVO, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.correoElectronicoAprendizVO, "", new { @class = "text-danger" })
+                </div>
+            </div>//creacion de la caja de texto que captura el email
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.claveAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.claveAprendizVO, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contraseña" } })
+                    @Html.ValidationMessageFor(model => model.claveAprendizVO, "", new { @class = "text-danger" })
+                </div>
+            </div>//creacion de la caja de texto que captura la clave
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Ingresar" class="btn btn-default" />
+                </div>
+            </div>
+        }<br />
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <script type="text/javascript">
+                alert("Email o Contraseña incorrecto");
+            </script>
+        }
+        <div><p>@ViewBag.Message</p></div>
+
+        <div style="padding-top:53.5vh"></div>
+        </div>
+</section>
+
+

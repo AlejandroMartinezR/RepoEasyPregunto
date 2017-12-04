@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="screen1">
+    <div class="fondo01">
+        <div class="fondo">
+
+
+        </div>
+        <div style="padding-top:400px;"></div>
+        <div class="titulos">
+            <h1>
+                <strong>Tutores Online en tiempo real con EasyPregunto:</strong>
+                <br />
+                <br />
+                La manera mas facil de obtener asesorias sobre cualquier tema, donde sea y garantizado
+
+
+
+            </h1>
+        </div>
+    </div>
+
+
+
+</section>
+<nav>
+    <ul>
+        <li>
+            <a href="@Url.Action("Principal", "Home")">
+                <img src="~/Content/Imagenes/logopng.png" alt="Logo" />
+            </a>
+        </li>
+        <li>@Html.ActionLink("EasyPregunto", "Principal", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Registrarse", "Registrar", "Usuario")</li>
+        <li>@Html.ActionLink("Ingresar", "Login", "Usuario")</li>
+
+    </ul>
+</nav>
+<section id="screen2"></section>
+
+<section id="screen3">
+
+    <div style="padding-top:80px"><br /></div>
+
+    <div class="lu">
+        <h2>Con EasyPregunto sabes mas</h2>
+        <p></p>
+    </div>
+    <div style="padding-top:50px"><br /></div>
+    <div class="divTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <img class="img-responsive value-icon center-block" src="https://df54ifeo9csf5.cloudfront.net/wp-content/uploads/2017/06/value-icon-2.gif?x34348" alt="Seguridad y confianza">
+                    <h3>Contenido Garantizado</h3>
+                    <br />
+                    <p>aqui decimos que la informacion que daremos es 100% fiable y garantizada</p>
+                </div>
+                <div class="divTableCell">
+                    <img class="img-responsive value-icon center-block" src="https://df54ifeo9csf5.cloudfront.net/wp-content/uploads/2017/06/value-icon-1.gif?x34348" alt="Profesores norteamericanos">
+                    <h3>Tutores Online</h3>
+                    <br />
+                    <p>aqui decimos que los tutores son profesionales calificados y que son de lo mejor</p>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <img class="img-responsive value-icon center-block" src="https://df54ifeo9csf5.cloudfront.net/wp-content/uploads/2017/06/value-icon-3.gif?x34348" alt="Clases individuales">
+                    <h3>Sesiones Express Online</h3>
+                    <br />
+                    <p>aqui explicamos el plus delas sesiones con los tutores, lo rapido que seria conectarse y los medios audiovisuales y pizarra</p>
+                </div>
+                <div class="divTableCell">
+                    <img class="img-responsive value-icon center-block" src="https://df54ifeo9csf5.cloudfront.net/wp-content/uploads/2017/06/value-icon-4.gif?x34348" alt="Lecciones interactivas">
+                    <h3>Diversidad de Areas</h3>
+                    <br />
+                    <p>aqui damos una breve explicacion de las areas de las que disponemos para las sesiones</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <button class="button button2">@Html.ActionLink(" ", "Registrar", "Usuario")Conoce nuestros Tutores</button>
+
+</section>
+
+<div style="padding-bottom:165px"></div>
+
+
+<section id="screen5">
+
+
+    <div style="padding-top:10px"></div>
+    <div class="lu">
+        <h2>Tutores en linea</h2>
+    </div>
+    <br />
+    <p>Contamos con educadores especializados en enseñanza a distancia para apoyarte siempre a</p>
+    <p>descubrir nuevos temas, averigua porque en EasyPregunto cuentas con los mejores:</p>
+
+    <div class="jo">
+        <div style="padding-right:485px;padding-top:41px;">
+            <div class="le">foto1<span class="tooltiptext">Licenciado en tal y tal y tal</span></div>
+        </div>
+        <br />
+        <br />
+
+        <div style="padding-right:359px;padding-top:202px;">
+            <div class="le">foto2<span class="tooltiptext">Licenciado en tal y tal y tal</span></div>
+
+        </div>
+
+
+        <br />
+        <br />
+        <br />
+        <div style="padding-right:1381px;padding-bottom:50px;">
+            <div class="le">foto3<span class="tooltiptext">Licenciado en tal y tal y tal</span></div>
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <div style="padding-right:251px;padding-top:40px;">
+            <div class="le">foto4<span class="tooltiptext">Licenciado en tal y tal y tal</span></div>
+
+        </div>
+
+
+    </div>
+</section>
+
+<section id="screen6">
+
+    <div style="padding-top:10px"></div>
+    <div class="lu">
+        <h2>Areas de Consulta</h2>
+    </div>
+
+
+</section>
+
+<section id="screen8">
+    <div style="padding-top:250px"></div>
+    <div class="trol">
+        <h3>
+            Un gran numero de personas han probado EasyPregunto y confian en sus tutores para aprender de manera confiable y rapida.
+            descubre como puedes hacer tu vida mas Easy con:
+        </h3>
+        <p></p>
+
+
+        <div><img src="~/Content/Imagenes/logopng.png" alt="Logo" /></div>
+    </div>
+    <br />
+  <div class="button button2"><a>@Html.ActionLink("Registrarse", "Registrar", "Usuario")</a></div>
+    
+</section>
+

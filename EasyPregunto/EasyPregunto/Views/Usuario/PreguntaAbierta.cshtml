@@ -1,0 +1,41 @@
+﻿@model EasyPregunto.Models.PreguntaAbiertaVO
+
+@{
+    ViewBag.Title = "PreguntaAbierta";
+    Layout = "~/Views/Shared/UsuarioSesion.cshtml";
+}
+
+<h2>PreguntaAbierta</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+
+                  <div class="form-group">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.preguntaVO, new { htmlAttributes = new { @class = "form-control", @id = "Prueba", } })
+                    @Html.ValidationMessageFor(model => model.preguntaVO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+  
+        <div id="cuadro" style="display:block">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="mybutton" value="Registrar" class="btn btn-default" onclick="ocultar()" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div>
+    <a href="@Url.Action("TutoresDisponibles","Usuario")">Ver Tutores disponibles</a>
+</div>
+<br />
+<div style="color:red"><p>@ViewBag.Message</p></div>
+
+
+

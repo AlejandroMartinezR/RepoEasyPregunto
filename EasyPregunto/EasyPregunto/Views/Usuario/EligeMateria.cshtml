@@ -1,0 +1,15 @@
+﻿@model EasyPregunto.Models.AprendizVO
+
+@{
+    ViewBag.Title = "EligeMateria";
+    Layout ="~/Views/Shared/UsuarioSesion.cshtml";
+}
+<h2>EligeMateria</h2>
+
+<h2>Hola @Session["usuarioConectado"] ¿¿ que Quieres preguntar Hoy?? </h2><br />
+<ul>
+    <li><a href="@Url.Action("Matematicas","Usuario")">Matematicas</a></li>
+    <li><a href="@Url.Action("Idiomas","Usuario")">Idiomas</a></li>
+    <li><a href="@Url.Action("Biologia","Usuario")">Biologia</a></li>
+    <li><a href="@Url.Action("Sistemas","Usuario")">Sistemas</a></li>
+</ul>
