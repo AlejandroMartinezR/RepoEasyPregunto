@@ -92,7 +92,8 @@ namespace EasyPregunto.Models
                 obj.Tiempo_Laborado = TiempoLaboradoTutorVO;
                 obj.Rol = 2;
                 obj.DescripcionPerfil = DescripcionPerfilVO;
-                obj.Area_Conocimiento = AreaConocimientoTutorVO;
+                obj.Area_Conocimiento = (int)AreaConocimientoTutorVO;
+                obj.Estado = 2;
 
                 modelo.Tutor.InsertOnSubmit(obj);
                 modelo.SubmitChanges();
