@@ -13,20 +13,20 @@
     
     <div class="form-horizontal">
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "pruebaLabel" })
         <div class="form-group">
-            @Html.LabelFor(model => model.NombresApredizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label>Nombres</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NombresApredizVO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NombresApredizVO, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.NombresApredizVO, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.apellidosAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label>Apellidos</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.apellidosAprendizVO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.apellidosAprendizVO, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.apellidosAprendizVO, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
@@ -34,31 +34,31 @@
             @Html.LabelFor(model => model.correoElectronicoAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.correoElectronicoAprendizVO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.correoElectronicoAprendizVO, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.correoElectronicoAprendizVO, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.claveAprendizVO, htmlAttributes: new { @class = "control-label col-md-2"})
+            <label>Contraseña:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.claveAprendizVO, new { htmlAttributes = new { @id = "contasena1" , @class = "form-control" }})
-                @Html.ValidationMessageFor(model => model.claveAprendizVO, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.claveAprendizVO, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.claveAprendizVO2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label>Confirmar Contraseña: </label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.claveAprendizVO2, new { htmlAttributes = new { @id = "contasena1", @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.claveAprendizVO2, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.claveAprendizVO2, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.aliasAprendizVO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label>Elige un Alias</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.aliasAprendizVO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.aliasAprendizVO, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.aliasAprendizVO, "", new { @class = "pruebaLabel" })
             </div>
         </div>
 
@@ -75,15 +75,6 @@
 </div>
 
 <div><p>@ViewBag.Message</p></div>
-
-<script type="text/javascript">
-    function SubmitsEncry() {
-
-        if (document.getElementById("contrasena1").value != document.getElementById("contrasena2").value)
-        {
-            alert("La contraseña y su confirmacion deben coincidir");
-        }
-    }
-</script>
+<link href="~/Scripts/HojaAlejo.css" rel="stylesheet" />
 
 <div style="padding-top:36.5vh"></div>
