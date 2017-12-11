@@ -10,6 +10,7 @@ namespace EasyPregunto.Models
     public class TutorVO
     {
         DataEasyDataContext modelo = new DataEasyDataContext();
+        ExperienciaVO ob = new ExperienciaVO();
 
         public int IdTutorVO { get; set; }
 
@@ -67,12 +68,15 @@ namespace EasyPregunto.Models
         Tutor obj = new Tutor();
         Encrypt i = new Encrypt();
 
+
         public bool RegistrarseTutor()
         {
             //se realiza la consulta
             var consulta = from a in modelo.Tutor
                            where a.Correo_Electronico_tutor == CorreoElectronicoTutorVO
                            select a;
+
+            ob.Traerid();
 
             //se valida si el usuario existe
             if (consulta.Count() > 0)
@@ -86,6 +90,7 @@ namespace EasyPregunto.Models
                 obj.Numero_Documento = NumeroDocumentoTutorVO;
                 obj.Nombres_Tutor = NombresTutorVO;
                 obj.Apellidos_Tutor = ApellidosTutorVO;
+                obj.Experiencia = ob.IdExperienciaVO;
                 obj.Clave_Tutor = i.Encripta(ClaveTutorVO);
                 obj.Correo_Electronico_tutor = CorreoElectronicoTutorVO;
                 obj.Telefono_Tutor = TelefonoTutorVO;

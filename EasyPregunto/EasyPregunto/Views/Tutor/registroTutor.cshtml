@@ -79,9 +79,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">
-            Agregar Experiencia
-        </button>
+        <a href="" onclick="abrirParametros()">Registra Experiencia</a>
 
         <div class="form-group">
             <label>Tiempo de Experiencia</label>
@@ -117,32 +115,21 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Realizar Registro" class="btn btn-default" />
+                <input type="submit" value="Realizar Registro" class="btn btn-default"/>
             </div>
         </div>
     </div>
 }
 
 
-<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Agregar Experiencia</h4>
-            </div>
-            <div class="modal-body">
-                Ingrese Experiencia
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Agregar</button>
-            </div>
-        </div>
-    </div>
-</div>
+<script type="text/javascript">
 
+    function abrirParametros()
+    {
+        open('http://localhost:50783/Tutor/registraExperiencia','Registrar Experiencia', 'status = yes, width = 400, height = 350, menubar = no,resizable=no,toolbar=no');
+    }
+
+</script>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

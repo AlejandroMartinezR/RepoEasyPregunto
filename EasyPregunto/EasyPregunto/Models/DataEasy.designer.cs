@@ -1273,9 +1273,9 @@ namespace EasyPregunto.Models
 		
 		private string _Cargo_Experiencia;
 		
-		private System.DateTime _FechaIngreso_Experiencia;
+		private string _FechaIngreso_Experiencia;
 		
-		private System.DateTime _FechaSalida_Experiencia;
+		private string _FechaSalida_Experiencia;
 		
 		private string _MotivoRetiro_Experiencia;
 		
@@ -1291,9 +1291,9 @@ namespace EasyPregunto.Models
     partial void OnEmpresaInstitucion_ExperienciaChanged();
     partial void OnCargo_ExperienciaChanging(string value);
     partial void OnCargo_ExperienciaChanged();
-    partial void OnFechaIngreso_ExperienciaChanging(System.DateTime value);
+    partial void OnFechaIngreso_ExperienciaChanging(string value);
     partial void OnFechaIngreso_ExperienciaChanged();
-    partial void OnFechaSalida_ExperienciaChanging(System.DateTime value);
+    partial void OnFechaSalida_ExperienciaChanging(string value);
     partial void OnFechaSalida_ExperienciaChanged();
     partial void OnMotivoRetiro_ExperienciaChanging(string value);
     partial void OnMotivoRetiro_ExperienciaChanged();
@@ -1365,8 +1365,8 @@ namespace EasyPregunto.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso_Experiencia", DbType="Date NOT NULL")]
-		public System.DateTime FechaIngreso_Experiencia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso_Experiencia", DbType="VarChar(10)")]
+		public string FechaIngreso_Experiencia
 		{
 			get
 			{
@@ -1385,8 +1385,8 @@ namespace EasyPregunto.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaSalida_Experiencia", DbType="Date NOT NULL")]
-		public System.DateTime FechaSalida_Experiencia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaSalida_Experiencia", DbType="VarChar(10)")]
+		public string FechaSalida_Experiencia
 		{
 			get
 			{

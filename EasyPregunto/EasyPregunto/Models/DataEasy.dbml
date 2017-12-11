@@ -56,8 +56,8 @@
       <Column Name="Id_Experiencia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="EmpresaInstitucion_Experiencia" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Cargo_Experiencia" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaIngreso_Experiencia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="FechaSalida_Experiencia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso_Experiencia" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FechaSalida_Experiencia" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MotivoRetiro_Experiencia" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="Experiencia_Tutor" Member="Tutor" ThisKey="Id_Experiencia" OtherKey="Experiencia" Type="Tutor" />
     </Type>

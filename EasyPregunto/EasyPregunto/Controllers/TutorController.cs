@@ -12,6 +12,8 @@ namespace EasyPregunto.Controllers
     {
         DataEasyDataContext modelo = new DataEasyDataContext();
         TutorVO obj = new TutorVO();
+        ExperienciaVO epx = new ExperienciaVO();
+
 
         // GET: Tutor
         public ActionResult PerfilTutor()
@@ -38,7 +40,9 @@ namespace EasyPregunto.Controllers
                 else
 
                 {
-                    return View("Login");
+
+                    ViewBag.Message = "Se registro el tutor de manera correcta";
+                    return View("registroTutor");
                 }
             }
             else
@@ -48,6 +52,39 @@ namespace EasyPregunto.Controllers
             }
         }
 
+        public ActionResult registraExperiencia()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> registraExperiencia(ExperienciaVO datos) //metodo asincrono
+        {
+            if (ModelState.IsValid)
+            {
+                if (datos.RegistroExperiencia() == false)
+                {
+                    ViewBag.Message = "No se registro la experiencia";
+                    return View("registraExperiencia", datos);
+                }
+                else
+
+                {
+                    ViewBag.Message = "Se registro la experiencia de manera correcta";
+                    return View("registraExperiencia");                   
+                }
+            }
+            else
+            {
+                ViewBag.Message = "No se registro el usuario correctamente";
+                return View("registraExperiencia");
+            }
+        }
+
+        public ActionResult LoginTutor()
+        {
+            return View();
+        }
     }
 }

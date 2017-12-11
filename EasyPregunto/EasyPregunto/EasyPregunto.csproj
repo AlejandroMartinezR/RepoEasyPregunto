@@ -159,6 +159,7 @@
     </Compile>
     <Compile Include="Models\Encrypt.cs" />
     <Compile Include="Models\EstadoSesion.cs" />
+    <Compile Include="Models\ExperienciaVO.cs" />
     <Compile Include="Models\NivelEstudio.cs" />
     <Compile Include="Models\PreguntaAbiertaVO.cs" />
     <Compile Include="Models\RegistrarseVO.cs" />
@@ -190,6 +191,7 @@
     <Content Include="Views\Usuario\PreguntaAbierta.cshtml" />
     <Content Include="Views\Usuario\PaantallaDeEspera.cshtml" />
     <Content Include="Views\Tutor\registroTutor.cshtml" />
+    <Content Include="Views\Tutor\registraExperiencia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
